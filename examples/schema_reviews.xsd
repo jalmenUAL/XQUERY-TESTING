@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:complexType name="section">
+              <xs:sequence>
+                    <xs:element name="title" type="titleType"/>
+                    <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>        
+               </xs:sequence>
+</xs:complexType>
+<xs:element name="reviews">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="chapter" minOccurs="1" maxOccurs="unbounded">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
